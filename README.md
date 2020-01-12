@@ -1,7 +1,9 @@
 # replit
 Repl It scipts for practice Udemy 2020
-Basics I
-  Numbers
-  String
-  Lists
-  None
+<h2>Basics I</h2>
+  <ul>
+    <li>Numbers</li>
+    <li>String</li>
+    <li>Lists</li>
+    <li>None</li>
+  </ul>
