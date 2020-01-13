@@ -9,3 +9,5 @@ print(python[-4])
 print(python[:-3])
 print(python[-3:])
 print(python[::-1])
+
+print('i' in python)
