@@ -11,3 +11,8 @@ def is_even(num):
 
 
 print(is_even(10))
+
+my_list = ["apple", "banana", "cherry", 'kiwi', 'pear', 'melon']
+my_tuple = ("apple", "banana", "cherry", 'kiwi', 'pear', 'melon')
+print(my_list[2:5])
+print(my_tuple[2:5])
