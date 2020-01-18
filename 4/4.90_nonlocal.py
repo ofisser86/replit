@@ -16,5 +16,3 @@ outer()
 #4 - built in python functions
 
 #Avoid to use global and nonlocal
-my-var = 5
-print(my-var)
