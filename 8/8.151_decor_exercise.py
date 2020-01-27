@@ -6,7 +6,7 @@ user1 = {
 
 def authenticated(fn):
     def wraper(*args, **kwargs):
-        # args це кортеж зі словіарем
+        # args це кортеж зі словарем, спочатку використав user['valid'] - не адаптивний спосіб, краще args[0]['valid']
         if args[0]['valid']:
             fn(*args, **kwargs)
         else:
