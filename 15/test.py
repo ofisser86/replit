@@ -11,7 +11,25 @@ class TestMain(unittest.TestCase):
         test_param = 'gdfsgsdfg'
         result = main.do_staff(test_param)
         # https://docs.python.org/3/library/unittest.html
-        self.assertTrue(isinstance(result, ValueError))
+        self.assertIsInstance(result, ValueError)
+    
+    def test_do_staff3(self):
+        test_param = None
+        result = main.do_staff(test_param)
+        # https://docs.python.org/3/library/unittest.html
+        self.assertEqual(result, 'plese enter a number')
+
+    def test_do_staff4(self):
+        test_param = ''
+        result = main.do_staff(test_param)
+        self.assertEqual(result, 'plese enter a number')
+    
+    def test_do_staff5(self):
+        test_param = 0
+        result = main.do_staff(test_param)
+        # https://docs.python.org/3/library/unittest.html
+        self.assertEqual(result, 5)
 
 
-unittest.main()
+if __name__ == '__main__':
+    unittest.main()

@@ -1,5 +1,8 @@
-def do_staff(num):
+def do_staff(num=0):
     try:
-        return int(num) + 5
+        if num or num == 0:
+            return int(num) + 5
+        else:
+            return 'plese enter a number'
     except ValueError as err:
         return err
