@@ -39,8 +39,10 @@ try:
         image = Image.open(img)
         converted_img = image.convert("L")
         
-        new_file_name = str(img).rstrip('.jpg').lstrip('Pokedex/')
-        converted_img.save(f'{dest_dir}/{new_file_name}_converted.png', 'png')
+        clean_name = os.fspath(img).rstrip('.jpg').lstrip('Pokedex/')
+        #clean_name = os.path.splitext(img)[0].split('Pokedex/')
+        print(clean_name)
+        converted_img.save(f'{dest_dir}/{clean_name}_converted.png', 'png')
 
     print("Converted!!!!!!!!!")
 except IndexError as err:
