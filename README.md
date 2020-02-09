@@ -15,11 +15,17 @@ Repl It scipts for practice Udemy 2020
   </ul>
   <h2>Basics 2</h2>
   <ul>
-    <li>enerators</li>
+    <li>Generators</li>
     <li>Regex</li>
     <li>Built in Functions</li>
     <li>Debuging</li>
     <li>Handling errors</li>
     <li>Lambda</li>
     <li>List comprehensions</li>
+  </ul>
+  <h2>Advanced</h2>
+  <ul>
+    <li>JPG to PNG converter</li>
+    <li>E-mail sender</li>
+    <li>Password checker</li>
   </ul>
