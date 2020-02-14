@@ -1,5 +1,5 @@
 def checkio(text: str) -> str:
-    temp = [i for i in text]
+    temp = set(text)
 
     #replace this for solution
     return temp
