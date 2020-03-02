@@ -16,8 +16,22 @@ def limit_handler(cursor):
     except tweepy.RateLimitError:
         time.sleep(300)
 
-for followers in tweepy.Cursor(api.followers).items():
-    print(followers.name)
+search_string = 'python'
+number_of_searches = 2
+
+
+for tweet in tweepy.Cursor(api.search, search_string).items(number_of_searches):
+    try:
+        tweet.favorite()
+        print('I like this tweet')
+    except tweepy.TweepError as er:
+        print(er.reason)
+    except StopIteration:
+        break
+
+
+# for followers in tweepy.Cursor(api.followers).items():
+#     print(followers.name)
 
 # public_tweets = api.home_timeline()
 # for tweet in public_tweets:
