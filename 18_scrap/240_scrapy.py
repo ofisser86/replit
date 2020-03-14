@@ -9,6 +9,9 @@ soup = BeautifulSoup(res.text, 'html.parser')
 links = soup.select('.storylink')
 subtext = soup.select('.subtext')
 
+def sorted_data_byvotes(hn_list):
+    return sorted(hn_list, key=lambda k: k['votes'], reverse=True)
+
 def custom_hn(links, subtext):
     hn = []
     for idx, item in enumerate(links):
@@ -30,7 +33,7 @@ def custom_hn(links, subtext):
         #     href = links[idx].get('href', None)
             
         #     hn.append({'title': title, 'href':href, 'votes':points}) 
-    return hn
+    return sorted_data_byvotes(hn)
 
 pprint.pprint(custom_hn(links, subtext))
 
