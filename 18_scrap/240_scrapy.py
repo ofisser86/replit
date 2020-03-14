@@ -2,12 +2,21 @@ import pprint
 import requests
 from bs4 import BeautifulSoup
 
-res = requests.get('https://news.ycombinator.com/news')
+url = 'https://news.ycombinator.com/news'
+payload = {'p': 1}
+res = requests.get('https://news.ycombinator.com/news', params=payload)
+res2 = requests.get('https://news.ycombinator.com/news', params={'p': 2})
 #print(res.headers['Set-Cookie'].strip('domain'))
 #print(dir(res))
 soup = BeautifulSoup(res.text, 'html.parser')
+soup2 = BeautifulSoup(res2.text, 'html.parser')
 links = soup.select('.storylink')
+links2 = soup2.select('.storylink')
 subtext = soup.select('.subtext')
+subtext2 = soup2.select('.subtext')
+
+mega_links = links + links2
+mega_subtext = subtext + subtext2
 
 def sorted_data_byvotes(hn_list):
     return sorted(hn_list, key=lambda k: k['votes'], reverse=True)
@@ -35,5 +44,5 @@ def custom_hn(links, subtext):
         #     hn.append({'title': title, 'href':href, 'votes':points}) 
     return sorted_data_byvotes(hn)
 
-pprint.pprint(custom_hn(links, subtext))
+pprint.pprint(custom_hn(mega_links, mega_subtext))
 
