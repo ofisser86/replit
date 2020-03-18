@@ -2,11 +2,15 @@
 <html>
 <head>
   <title>My index page</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="stylesheet" type="text/css" href="static/style.css">
 </head>
 <body>
 <h1>I am web developer</h1>
-<script src="script.js"></script>
+
+<h2>{{username}}</h2>
+{{post_id}}
+<script src="static/script.js"></script>
 </body>
 </html>
 
