@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 print(__name__)
@@ -14,6 +14,17 @@ def blog():
 @app.route('/<slug>')
 def works(slug):
     return render_template(f'{slug}')
+
+
+@app.route('/submit_form', methods=['POST', 'GET'])
+def submit_form():
+    if request.method == "POST":
+        data = request.form.to_dict()
+        print(data)
+        return "Data submted"
+    else:
+        return "Some error occur"
+    
 
 # @app.route('/works')
 # def works():
