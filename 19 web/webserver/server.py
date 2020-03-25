@@ -1,19 +1,37 @@
+import csv
 from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 print(__name__)
 
+
 @app.route('/')
 def my_index():
     return render_template('index.html')
+
 
 @app.route('/blog')
 def blog():
     return 'My blogpost!'
 
+
 @app.route('/<slug>')
 def works(slug):
     return render_template(f'{slug}')
+
+
+def write_to_csv(data):
+    email = data['email']
+    subject = data['subject']
+    message = data['message']
+    with open('database.csv', newline='', mode='a') as csv_database:
+        fieldnames = ['email', 'subject', 'message']
+        csv_writer = csv.DictWriter(csv_database, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL,
+                                   fieldnames=fieldnames)
+
+        csv_writer.writeheader()
+        csv_writer.writerow({'email': email, 'subject': subject, 'message': message})
+
 
 def write_to_file(data):
     email = data['email']
@@ -22,16 +40,17 @@ def write_to_file(data):
     with open('database.txt', 'a') as database:
         file = database.write(f'\n {email}, {subject}, {message}')
 
+
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == "POST":
         data = request.form.to_dict()
-        #print(data)
-        write_to_file(data)
+        # print(data)
+        write_to_csv(data)
         return redirect('/thankyou.html')
     else:
         return "Some error occur"
-    
+
 
 # @app.route('/works')
 # def works():
