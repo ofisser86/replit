@@ -15,12 +15,19 @@ def blog():
 def works(slug):
     return render_template(f'{slug}')
 
+def write_to_file(data):
+    email = data['email']
+    subject = data['subject']
+    message = data['message']
+    with open('database.txt', 'a') as database:
+        file = database.write(f'\n {email}, {subject}, {message}')
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == "POST":
         data = request.form.to_dict()
-        print(data)
+        #print(data)
+        write_to_file(data)
         return redirect('/thankyou.html')
     else:
         return "Some error occur"
