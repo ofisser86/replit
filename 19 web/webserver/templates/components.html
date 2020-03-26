@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./static/assets/favicon.ico" rel="icon">
-
-  <title>Title page</title>  
-
-<link href="./static/main.3f6952e4.css" rel="stylesheet"></head>
-
+{% extends "base.html" %}
+{% block content %}
 <body class="">
 <div id="site-border-left"></div>
 <div id="site-border-right"></div>
@@ -120,7 +101,7 @@
           <div class="row">
             
             <div class="col-md-6">
-               <h3 class="template-title-example">Basic Icons</h2>
+               <h3 class="template-title-example">Basic Icons</h3>
                 <ul class="list-icons">
                   <li>
                     <span class="fa-icon">
@@ -157,7 +138,7 @@
           <h2 class="template-title-example">Buttons</h2>
           <div class="row">
             <div class="col-md-6">
-              <h3 class="template-title-example">Primary</h2>
+              <h3 class="template-title-example">Primary</h3>
               <div class="row">
                   <div class="col-md-6">
                   <p><a href="" class="btn btn-primary btn-lg">Primary Large</a></p>
@@ -170,7 +151,7 @@
             </div>
 
             <div class="col-md-6">
-              <h3 class="template-title-example">Default</h2>
+              <h3 class="template-title-example">Default</h3>
               <div class="row">
                   <div class="col-md-6">
                   <p><a href="" class="btn btn-default btn-lg">Default Large</a></p>
@@ -236,26 +217,4 @@
     </div>
   </div>
 </footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     navActivePage();
-  });
-</script>
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
---> <script type="text/javascript" src="./static/main.70a66962.js"></script></body>
-
-</html>
+{% endblock %}

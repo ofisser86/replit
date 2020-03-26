@@ -12,12 +12,14 @@ def my_index():
 
 @app.route('/blog')
 def blog():
-    return 'My blogpost!'
+    # return 'My blogpost!'
+    return  render_template('blog.html',)
 
 
 @app.route('/<slug>')
 def works(slug):
-    return render_template(f'{slug}')
+    print(request.view_args)
+    return render_template(f'{slug}', slug=slug)
 
 
 def write_to_csv(data):
