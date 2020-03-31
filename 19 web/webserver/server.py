@@ -7,7 +7,8 @@ print(__name__)
 
 @app.route('/')
 def my_index():
-    return render_template('index.html')
+    slug = '/'
+    return render_template('index.html', slug=slug)
 
 
 @app.route('/blog')
