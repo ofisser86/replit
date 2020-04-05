@@ -1,3 +1,4 @@
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 # replit
 Repl It scipts for practice Udemy 2020
 <h2>Basics I</h2>
