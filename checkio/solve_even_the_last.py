@@ -3,15 +3,14 @@ def checkio(array):
         sums even-indexes elements and multiply at the last
     """
     res = 0
-    print(array)
-    for i in range(len(array)):
-        if i % 2 == 0:
-            print(array[i])
-            res += array[i]
-        i += 1
-    print(res)
-    return res * array[-1]
-
+    if len(array) > 0:
+        
+        for i in range(len(array)):
+            if i % 2 == 0:
+                res += array[i]
+            i += 1
+        return res * array[-1]
+    return 0
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
     print('Example:')
