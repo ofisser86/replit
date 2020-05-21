@@ -8,6 +8,9 @@ pylint = "*"
 autopep8 = "*"
 
 [packages]
+selenium = "*"
+myproject = {editable = true,path = "."}
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"

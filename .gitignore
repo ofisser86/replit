@@ -17,6 +17,7 @@ media
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+ strydlogin.py
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -202,3 +203,6 @@ venv.bak/
 speech_rec/OSR_us_000_0018_8k.wav
 20_selenium/geckodriver.exe
 20_selenium/chromedriver.exe
+20_selenium/strydlogin.py
+strydlogin.py
+.gitignore

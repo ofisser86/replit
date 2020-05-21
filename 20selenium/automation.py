@@ -3,7 +3,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
 web_browser = webdriver.Firefox()
+# https://www.stryd.com/powercenterbeta/profile
+# https://www.seleniumeasy.com/test/basic-first-form-demo.html
 web_browser.get('https://www.seleniumeasy.com/test/basic-first-form-demo.html')
 
 
