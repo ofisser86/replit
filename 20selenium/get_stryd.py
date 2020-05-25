@@ -1,4 +1,7 @@
 import os
+
+import requests
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -29,8 +32,12 @@ element = wait.until(EC.title_contains('Stryd PowerCenter'))
 #web_browser.get(f'https://www.stryd.com/powercenter/calendar/?sid={web_browser.session_id}')
 
 
-myreaponse = web_browser.execute_script("return document.getElementById('5782253728366592')")
-print(myreaponse)
+# myreaponse = web_browser.execute_script("return window.onload = function() { return true}")
+# myreaponse = web_browser.execute_script("arguments[0]")
+# print(myreaponse)
+r = requests.get(f'https://www.stryd.com/powercenter/runs/5782253728366592/?sid={web_browser.session_id}')
+for i in r.cookies:
+    print(i)
 
 web_browser.get(f'https://www.stryd.com/powercenter/runs/5782253728366592/?sid={web_browser.session_id}')
 
