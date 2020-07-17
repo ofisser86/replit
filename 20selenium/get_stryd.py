@@ -27,25 +27,25 @@ web_browser.find_element_by_id('loginbutton').click()
 
 
 
-wait = WebDriverWait(web_browser, 10)
+wait = WebDriverWait(web_browser, 20)
 element = wait.until(EC.title_contains('Stryd PowerCenter'))
-#web_browser.get(f'https://www.stryd.com/powercenter/calendar/?sid={web_browser.session_id}')
+assert element == True
+web_browser.get(f'https://www.stryd.com/powercenter/?sid={web_browser.session_id}')
 
 
 # myreaponse = web_browser.execute_script("return window.onload = function() { return true}")
-# myreaponse = web_browser.execute_script("arguments[0]")
-# print(myreaponse)
-r = requests.get(f'https://www.stryd.com/powercenter/runs/5782253728366592/?sid={web_browser.session_id}')
-for i in r.cookies:
-    print(i)
+myreaponse = web_browser.find_elements_by_css_selector('id')
+for items in myreaponse:
+    print(items)
 
-web_browser.get(f'https://www.stryd.com/powercenter/runs/5782253728366592/?sid={web_browser.session_id}')
 
-wait.until(EC.text_to_be_present_in_element((By.TAG_NAME, 'h3'), 'Distance Splits'))
+# web_browser.get(f'https://www.stryd.com/powercenter/runs/5782253728366592/?sid={web_browser.session_id}')
 
-el = web_browser.find_elements_by_tag_name('p')
-for items in el[:31]:
-    print(items.text)
+# wait.until(EC.text_to_be_present_in_element((By.TAG_NAME, 'h3'), 'Distance Splits'))
+
+# el = web_browser.find_elements_by_tag_name('p')
+# for items in el[:31]:
+#     print(items.text)
 
 
 web_browser.quit()
