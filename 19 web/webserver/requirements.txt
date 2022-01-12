@@ -14,7 +14,7 @@ Js2Py==0.68
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
 packaging==20.3
-pipenv==2018.11.26
+pipenv==2022.1.8
 pipwin==0.4.7
 PyAudio==0.2.11
 pyjsparser==2.7.1
